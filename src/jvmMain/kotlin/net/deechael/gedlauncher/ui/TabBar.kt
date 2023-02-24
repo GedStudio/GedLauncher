@@ -7,6 +7,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import net.deechael.gedlauncher.api.Locale
 
 @Composable
 fun TabBar(
@@ -23,7 +24,7 @@ fun TabBar(
             onClick = onHome
         ) {
             Text(
-                text = "主页",
+                text = Locale.lang("buttonHome"),
                 modifier = Modifier.padding(8.dp)
             )
         }
@@ -32,7 +33,7 @@ fun TabBar(
             onClick = onDownload
         ) {
             Text(
-                text = "下载",
+                text = Locale.lang("buttonDownload"),
                 modifier = Modifier.padding(8.dp)
             )
         }
@@ -41,7 +42,7 @@ fun TabBar(
             onClick = onSettings
         ) {
             Text(
-                text = "设置",
+                text = Locale.lang("buttonSettings"),
                 modifier = Modifier.padding(8.dp)
             )
         }

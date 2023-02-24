@@ -7,6 +7,7 @@ import net.deechael.gedlauncher.api.Themes
 import net.deechael.gedlauncher.themes.LatteTheme
 import net.deechael.gedlauncher.themes.MochaTheme
 import net.deechael.gedlauncher.ui.Home
+import net.deechael.gedlauncher.ui.Page
 
 @Composable
 @Preview
@@ -15,17 +16,24 @@ fun App() {
     val configuration = api.getConfiguration()
     if (configuration.getTheme() == Themes.MOCHA) {
         MochaTheme {
-            Home()
+            Page(0) {
+                Home()
+            }
         }
     } else {
         LatteTheme {
-            Home()
+            Page(0) {
+                Home()
+            }
         }
     }
 }
 
 fun main() = application {
-    Window(onCloseRequest = ::exitApplication) {
+    Window(
+        title = "GedLauncher",
+        onCloseRequest = ::exitApplication
+    ) {
         App()
     }
 }
